@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スペースジャンプ - ワンキーゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>スペースジャンプ</h1>
+        <div class="instructions">スペースキーでジャンプ！障害物を避けよう</div>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div class="score-container">
+            <div class="score">スコア: <span id="score">0</span></div>
+            <div class="high-score">ハイスコア: <span id="highScore">0</span></div>
+        </div>
+        <div class="game-over" id="gameOver">
+            <h2>ゲームオーバー！</h2>
+            <p>スコア: <span id="finalScore">0</span></p>
+            <p>スペースキーでリトライ</p>
+        </div>
+        <div class="start-screen" id="startScreen">
+            <h2>スペースジャンプ</h2>
+            <p>スペースキーでスタート！</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
