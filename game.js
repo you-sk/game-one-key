@@ -52,10 +52,15 @@ class Obstacle {
     }
 
     collidesWith(player) {
-        return player.x < this.x + this.width &&
-               player.x + player.width > this.x &&
-               player.y < this.y + this.height &&
-               player.y + player.height > this.y;
+        // プレイヤーの中央座標を計算（当たり判定を中央1ピクセルに縮小）
+        const playerCenterX = player.x + player.width / 2;
+        const playerCenterY = player.y + player.height / 2;
+        const hitboxSize = 2; // 当たり判定のサイズ（2x2ピクセル）
+        
+        return playerCenterX - hitboxSize/2 < this.x + this.width &&
+               playerCenterX + hitboxSize/2 > this.x &&
+               playerCenterY - hitboxSize/2 < this.y + this.height &&
+               playerCenterY + hitboxSize/2 > this.y;
     }
 }
 
